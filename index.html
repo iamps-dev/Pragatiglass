@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragati Glass</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for a premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Using FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="app-container">
+        <!-- Sidebar / Drawer -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>PG GLASS</span>
+                </div>
+                <button id="close-sidebar" class="icon-btn mobile-only">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-target="dashboard-screen"><a href="#"><i class="fa-solid fa-gauge-high"></i>
+                            <span>Dashboard</span></a></li>
+                    <li class="active" data-target="mould-entry-screen"><a href="#"><i
+                                class="fa-solid fa-pen-to-square"></i> <span>Mould Entry</span></a></li>
+                    <li data-target="inspection-screen"><a href="#"><i class="fa-solid fa-clipboard-check"></i>
+                            <span>Inspection</span></a></li>
+                    <li data-target="bottle-entry-screen"><a href="#"><i class="fa-solid fa-wine-bottle"></i>
+                            <span>Bottle Entry</span></a></li>
+                    <li data-target="list-screen"><a href="#"><i class="fa-solid fa-list"></i> <span>List
+                                View</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-pie"></i> <span>Reports</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="avatar">AD</div>
+                    <div class="user-details">
+                        <span class="name">Admin User</span>
+                        <span class="role">Manager</span>
+                    </div>
+                </div>
+
+                <div class="logout-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+            </div>
+
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-bar">
+                <div class="left-section">
+                    <button id="toggle-sidebar" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1>Mould Entry Record</h1>
+                </div>
+                <div class="right-section">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="Search records...">
+                    </div>
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                </div>
+            </header>
+
+            <!-- Content Scroll Area -->
+            <div class="content-scroll">
+
+                <!-- Screen: Dashboard (New) -->
+                <div id="dashboard-screen" class="screen">
+                    <div class="dashboard-grid">
+                        <!-- Statistics Cards -->
+                        <div class="stat-card">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">1,234</h3>
+                                <p class="stat-label">Total Moulds</p>
+                                <span class="stat-change positive">+12% from last month</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">567</h3>
+                                <p class="stat-label">Inspections</p>
+                                <span class="stat-change positive">+8% from last month</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <i class="fa-solid fa-wine-bottle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">892</h3>
+                                <p class="stat-label">Bottle Entries</p>
+                                <span class="stat-change negative">-3% from last month</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">95%</h3>
+                                <p class="stat-label">Quality Rate</p>
+                                <span class="stat-change positive">+2% from last month</span>
+                            </div>
+                        </div>
+
+
+                        <!-- Quick Actions -->
+                        <div class="dashboard-card quick-actions-card">
+                            <h3 class="card-title">Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn" data-target="mould-entry-screen">
+                                    <i class="fa-solid fa-plus-circle"></i>
+                                    <span>New Mould Entry</span>
+                                </button>
+                                <button class="action-btn" data-target="inspection-screen">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                    <span>New Inspection</span>
+                                </button>
+                                <button class="action-btn" data-target="bottle-entry-screen">
+                                    <i class="fa-solid fa-wine-bottle"></i>
+                                    <span>Bottle Entry</span>
+                                </button>
+                                <button class="action-btn" data-target="list-screen">
+                                    <i class="fa-solid fa-list"></i>
+                                    <span>View List</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen: Mould Entry (Existing) -->
+                <div id="mould-entry-screen" class="screen active">
+                    <div class="form-container">
+                        <!-- The Form -->
+                        <form class="mould-form">
+
+                            <!-- Section: Basic Information -->
+                            <div class="form-section">
+                                <h3 class="section-title">Basic Information</h3>
+                                <div class="grid-layout">
+
+                                    <div class="form-group span-2">
+                                        <label>Bottle Name</label>
+                                        <input type="text" placeholder="Enter bottle name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Bottle Nick Name</label>
+                                        <input type="text" placeholder="Nick name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Family</label>
+                                        <select>
+                                            <option>NO</option>
+                                            <option>YES</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Manager Name</label>
+                                        <input type="text" placeholder="Manager Name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Specifications -->
+                            <div class="form-section">
+                                <h3 class="section-title">Specifications</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group">
+                                        <label>Neck Finish</label>
+                                        <select>
+                                            <option>AEROSOL</option>
+                                            <option>RCO</option>
+                                            <option>PCO</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Weight (GMS)</label>
+                                        <input type="number" placeholder="0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Capacity (ML)</label>
+                                        <input type="number" placeholder="0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Bottle Shape</label>
+                                        <select>
+                                            <option>ROUND</option>
+                                            <option>SQUARE</option>
+                                            <option>OVAL</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Product Category</label>
+                                        <select>
+                                            <option>BOTTLE</option>
+                                            <option>JAR</option>
+                                            <option>CAP</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Mould Details -->
+                            <div class="form-section">
+                                <h3 class="section-title">Mould Details</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group">
+                                        <label>Mould Status</label>
+                                        <select>
+                                            <option>PRIVATE</option>
+                                            <option>PUBLIC</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Process</label>
+                                        <select>
+                                            <option>BLOW & BLOW</option>
+                                            <option>PRESS & BLOW</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Type of Mould</label>
+                                        <select>
+                                            <option>SG</option>
+                                            <option>DG</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>No of Sets</label>
+                                        <input type="number" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>No of Mould</label>
+                                        <input type="number" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Machine No</label>
+                                        <input type="text" placeholder="Machine #">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Drawing No</label>
+                                        <input type="text" placeholder="Drawing #">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Dates & Logistics -->
+                            <div class="form-section">
+                                <h3 class="section-title">Dates & Logistics</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group">
+                                        <label>Order Date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Order By</label>
+                                        <input type="text" placeholder="Ordered by">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ETD</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ETA</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Receive Date</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Commercials -->
+                            <div class="form-section">
+                                <h3 class="section-title">Commercials</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group span-2">
+                                        <label>Customer</label>
+                                        <input type="text" placeholder="Customer Name">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Supplier</label>
+                                        <input type="text" placeholder="Supplier Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Supplier Bill No.</label>
+                                        <input type="text" placeholder="Bill #">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="number" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section: Additional Info -->
+                            <div class="form-section">
+                                <h3 class="section-title">Additional Info</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group">
+                                        <label>Sample Date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Production Date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group span-3">
+                                        <label>Remark</label>
+                                        <input type="text" placeholder="Enter any remarks here...">
+                                    </div>
+                                    <div class="form-group span-3">
+                                        <label>Drawing File</label>
+                                        <div class="file-input-wrapper">
+                                            <input type="file" id="drawingFile">
+                                            <label for="drawingFile" class="file-label">
+                                                <i class="fa-solid fa-cloud-arrow-up"></i> Choose File
+                                            </label>
+                                            <span class="file-name">No file chosen</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <!-- Toolbar (Moved to Bottom) -->
+                        <div class="form-toolbar bottom-toolbar">
+                            <div class="toolbar-actions">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New</button>
+                                <button class="btn btn-success"><i class="fa-solid fa-save"></i> Save</button>
+                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button>
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> Print</button>
+                                <button class="btn btn-outline"><i class="fa-solid fa-xmark"></i> Close</button>
+                            </div>
+                            <div class="record-info">
+                                <span>(01/11/2025) 2019-2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen: Inspection (New) -->
+                <div id="inspection-screen" class="screen">
+                    <div class="form-container">
+                        <form class="mould-form">
+                            <!-- Header Info -->
+                            <div class="form-section">
+                                <h3 class="section-title">Inspection Details</h3>
+                                <div class="grid-layout">
+
+                                    <div class="form-group">
+                                        <label>Mould</label>
+                                        <div style="display: flex; gap: 0.5rem;">
+                                            <input type="text" placeholder="Mould Name" style="flex: 1;">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Bottle Code</label>
+                                        <input type="text" placeholder="Code">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Marketing Manager</label>
+                                        <input type="text" placeholder="Manager Name">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Bottle Name</label>
+                                        <input type="text" placeholder="Bottle Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Drawing No.</label>
+                                        <input type="text" placeholder="Drawing #">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Mould Supplier</label>
+                                        <input type="text" placeholder="Supplier">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Inspected By</label>
+                                        <input type="text" placeholder="Inspector Name">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Customer</label>
+                                        <input type="text" placeholder="Customer Name">
+                                    </div>
+
+                                    <!-- Right side fields mixed in grid -->
+                                    <div class="form-group">
+                                        <label>Blow</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Blank</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Sample</label>
+                                        <select>
+                                            <option>Select Sample</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>M/C</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Neck Finish</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>No. of Set</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Shape</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group span-2">
+                                        <label>Category</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quality Attribute Table -->
+                            <div class="form-section">
+                                <h3 class="section-title">Quality Attributes</h3>
+                                <div class="table-responsive">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Quality Attribute</th>
+                                                <th>Drawing</th>
+                                                <th>Original Bottle</th>
+                                                <th>H_No1</th>
+                                                <th>H_No3</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>T</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>E</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>F</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Bore</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Height</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body X</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body Y</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Weight</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Capacity</strong></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                                <td><input type="text"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Packing Detail -->
+                            <div class="form-section">
+                                <h3 class="section-title">Packing Detail</h3>
+                                <div class="grid-layout">
+                                    <div class="form-group span-3">
+                                        <input type="text" placeholder="Packing Description">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Box Size</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Net Wt.</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Gr. Wt.</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PCS/Box</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CBM/Box</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+
+                                <h4 class="subsection-title"
+                                    style="margin-top: 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                    Loading Availability</h4>
+                                <div class="grid-layout">
+                                    <div class="form-group">
+                                        <label>Container Size</label>
+                                        <div style="padding: 0.5rem 0;">20 ft</div>
+                                        <div style="padding: 0.5rem 0;">40 ft</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Weight (in tons)</label>
+                                        <input type="text" style="margin-bottom: 0.5rem;">
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CBM</label>
+                                        <input type="text" style="margin-bottom: 0.5rem;">
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>No. of Box</label>
+                                        <input type="text" style="margin-bottom: 0.5rem;">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <!-- Toolbar (Moved to Bottom) -->
+                        <div class="form-toolbar bottom-toolbar">
+                            <div class="toolbar-actions">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New</button>
+                                <button class="btn btn-success"><i class="fa-solid fa-save"></i> Save</button>
+                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button>
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> Print</button>
+                                <button class="btn btn-outline"><i class="fa-solid fa-xmark"></i> Close</button>
+                            </div>
+                            <div class="record-info">
+                                <span>NEW RECORD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen: Bottle Entry (New) -->
+                <div id="bottle-entry-screen" class="screen">
+                    <div class="form-container">
+                        <form class="mould-form">
+                            <h3 class="section-title">Bottle Entry</h3>
+                            <div class="grid-layout">
+                                <div class="form-group span-2">
+                                    <label>Bottle</label>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <input type="text" placeholder="Bottle Name" style="flex: 1;">
+                                    </div>
+                                </div>
+                                <div class="form-group span-2">
+                                    <label>Document</label>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <input type="text" id="docPathInput" placeholder="Document1 Path"
+                                            style="flex: 1;">
+                                        <input type="file" id="hiddenFileInput" style="display: none;">
+                                        <button type="button" id="browseBtn" class="btn btn-secondary">Browse</button>
+                                        <span id="docNameSpan" style="align-self: center; font-weight: 500;">Doc
+                                            1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Toolbar (Moved to Bottom) -->
+                        <div class="form-toolbar bottom-toolbar">
+                            <div class="toolbar-actions">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New</button>
+                                <button class="btn btn-success"><i class="fa-solid fa-save"></i> Save</button>
+                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button>
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> Print</button>
+                                <button class="btn btn-outline"><i class="fa-solid fa-xmark"></i> Close</button>
+                            </div>
+                            <div class="record-info">
+                                <span>NEW RECORD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen: List (New) -->
+                <div id="list-screen" class="screen">
+                    <div class="form-container">
+                        <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-color);">
+                            <h3 class="section-title">List View</h3>
+                            <div class="grid-layout"
+                                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: end;">
+                                <div class="form-group">
+                                    <label>Code No.</label>
+                                    <input type="text" value="1977">
+                                </div>
+                                <div class="form-group span-2">
+                                    <label>Bottle</label>
+                                    <input type="text">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" style="width: 100%;">List</button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-danger" style="width: 100%;">DELETE IMAGE</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive" style="padding: 0 1.5rem 1.5rem;">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>Sr No</th>
+                                        <th>Date</th>
+                                        <th>Bottle Name</th>
+                                        <th>Product Type</th>
+                                        <th>Size</th>
+                                        <th>Bottle Shape</th>
+                                        <th>Mould Type</th>
+                                        <th>Drawing No</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>1</td>
+                                        <td>2025/10/31</td>
+                                        <td>UNICON</td>
+                                        <td>PERFUME</td>
+                                        <td>FANCY</td>
+                                        <td>50</td>
+                                        <td>DG</td>
+                                        <td>PGW/DG/5...</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>2025/10/31</td>
+                                        <td>UNICON</td>
+                                        <td>PERFUME</td>
+                                        <td>FANCY</td>
+                                        <td>50</td>
+                                        <td>DG</td>
+                                        <td>PGW/DG/5...</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>3</td>
+                                        <td>2025/10/31</td>
+                                        <td>UNICON</td>
+                                        <td>PERFUME</td>
+                                        <td>FANCY</td>
+                                        <td>50</td>
+                                        <td>DG</td>
+                                        <td>PGW/DG/5...</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>4</td>
+                                        <td>2025/10/31</td>
+                                        <td>UNICON</td>
+                                        <td>PERFUME</td>
+                                        <td>FANCY</td>
+                                        <td>50</td>
+                                        <td>DG</td>
+                                        <td>PGW/DG/5...</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>5</td>
+                                        <td>2025/10/31</td>
+                                        <td>UNICORN</td>
+                                        <td>PERFUME</td>
+                                        <td>FANCY</td>
+                                        <td>50</td>
+                                        <td>DG</td>
+                                        <td>PGW/DG/5...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Toolbar (Moved to Bottom) -->
+                        <div class="form-toolbar bottom-toolbar">
+                            <div class="toolbar-actions">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New</button>
+                                <button class="btn btn-success"><i class="fa-solid fa-save"></i> Save</button>
+                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button>
+                                <button class="btn btn-secondary"><i class="fa-solid fa-print"></i> Print</button>
+                                <button class="btn btn-outline"><i class="fa-solid fa-xmark"></i> Close</button>
+                            </div>
+                            <div class="record-info">
+                                <span>NEW RECORD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
